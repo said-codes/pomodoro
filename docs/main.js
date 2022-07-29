@@ -63,10 +63,10 @@ function renderTasks() {
 function startButtonHandler(id) {
   time = 5;
   const taskIndex = tasks.findIndex((task) => task.id == id);
-  const timerValue= document.querySelector('#time #taskName').textContent;
-  timerValue=tasks[taskIndex].title;
+  document.querySelector('#time #taskName').textContent =
+    tasks[taskIndex].title;
 
-  renderTime(); 
+  renderTime();
   timer = setInterval(() => {
     timerHandler(id);
   }, 1000);
