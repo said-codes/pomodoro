@@ -5,10 +5,10 @@ let timer = null;
 let timerBreak = null;
 let current = null;
 
-const bAdd = document.querySelector('#bAdd');
-const itTask = document.querySelector('#itTask');
+const bAdd = document.querySelector('#b-add');
+const itTask = document.querySelector('#it-task');
 const form = document.querySelector('#form');
-const taskName = document.querySelector('#taskName');
+const taskName = document.querySelector('#task-name');
 
 renderTime();
 renderTasks();
@@ -47,7 +47,6 @@ function renderTasks() {
 
   const tasksContainer = document.querySelector('#tasks');
   tasksContainer.innerHTML = html.join('');
-
   const startButtons = document.querySelectorAll('.task  .start-button');
 
   startButtons.forEach((button) => {
@@ -63,8 +62,7 @@ function renderTasks() {
 function startButtonHandler(id) {
   time = 5;
   const taskIndex = tasks.findIndex((task) => task.id == id);
-  document.querySelector('#time #taskName').textContent =
-    tasks[taskIndex].title;
+  taskName.textContent = tasks[taskIndex].title;
 
   renderTime();
   timer = setInterval(() => {
