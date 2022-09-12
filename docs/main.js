@@ -113,5 +113,6 @@ function timerBreakHandler() {
     current = null;
     timerBreak = null;
     taskName.textContent = '';
+    renderTasks();
   }
 }
