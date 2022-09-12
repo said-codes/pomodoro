@@ -1,11 +1,9 @@
 const tasks = [];
-
 let time = 0;
 let timer = null;
 let timerBreak = null;
 let current = null;
-
-const bAdd = document.querySelector('#b-add');
+const bAdd = document.querySelector('#button-add');
 const itTask = document.querySelector('#it-task');
 const form = document.querySelector('#form');
 const taskName = document.querySelector('#task-name');
@@ -44,11 +42,9 @@ function renderTasks() {
         <div class="title">${task.title}</div>
         </div> `;
   });
-
   const tasksContainer = document.querySelector('#tasks');
   tasksContainer.innerHTML = html.join('');
   const startButtons = document.querySelectorAll('.task  .start-button');
-
   startButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
       if (!timer) {
@@ -63,7 +59,6 @@ function startButtonHandler(id) {
   time = 5;
   const taskIndex = tasks.findIndex((task) => task.id == id);
   taskName.textContent = tasks[taskIndex].title;
-
   renderTime();
   timer = setInterval(() => {
     timerHandler(id);
